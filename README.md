@@ -8,4 +8,4 @@ The project structure of this templates was inspired by [github.com/teocomi/Hell
 
 ## License
 
-NodeModelsEssentials is licensed under the MIT license. (http://opensource.org/licenses/MIT)
+DynamoNodeModelsEssentials is licensed under the MIT license. (http://opensource.org/licenses/MIT)
