@@ -289,3 +289,11 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# macOS
+*.DS_Store
+.DS_Store
+*._.DS_Store
+*._.README.md
+._.README.md
+._.DS_Store
