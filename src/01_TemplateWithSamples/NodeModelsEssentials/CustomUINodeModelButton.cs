@@ -11,7 +11,7 @@ using NodeModelsEssentials.Functions;
 
 namespace NodeModelsEssentials.Examples
 {
-    [NodeName("Essentials.ButtonUINodeModel")]
+    [NodeName("Essentials.CustomUI.Button")]
     [NodeDescription("A sample Node Model with custom UI.")]
     [NodeCategory("NodeModelsEssentials")]
     [OutPortNames("Result")]
