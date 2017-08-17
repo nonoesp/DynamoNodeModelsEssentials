@@ -5,7 +5,7 @@ using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
 using Autodesk.DesignScript.Geometry;
 
-namespace NodeModelsEssentials.UVPlanesOnSurface
+namespace NodeModelsEssentials.Examples
 {
     // <summary>
     // Given a surface, returns a grid of UV tangent planes.

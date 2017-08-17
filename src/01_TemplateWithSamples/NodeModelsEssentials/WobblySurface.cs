@@ -5,7 +5,7 @@ using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
 using Autodesk.DesignScript.Geometry;
 
-namespace NodeModelsEssentials.WobblySurface
+namespace NodeModelsEssentials.Examples
 {
 
     // <summary>

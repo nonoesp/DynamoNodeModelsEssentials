@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
-namespace NodeModelsEssentials.MultiplyMulti
+
+namespace NodeModelsEssentials.Examples
 {
     // <summary>
     // Sample Node Model called MultiplyMulti.

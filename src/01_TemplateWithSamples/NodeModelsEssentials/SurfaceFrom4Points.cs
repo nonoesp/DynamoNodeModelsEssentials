@@ -5,7 +5,7 @@ using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
 using Autodesk.DesignScript.Geometry;
 
-namespace NodeModelsEssentials.SurfaceFrom4Points
+namespace NodeModelsEssentials.Examples
 {
     // <summary>
     // A simple node to create a surface from four points.
