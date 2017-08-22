@@ -43,31 +43,31 @@ namespace NodeModelsEssentials.Examples
                 };
             }
 
-            var multiplyFunctionCall =
+            var multiplyFunctionNode =
                 AstFactory.BuildFunctionCall(
                     new Func<double, double, double>(NodeModelsEssentialsFunctions.Multiply),
                     new List<AssociativeNode> { inputAsNodes[0], inputAsNodes[1] });
 
-            var addFunctionCall =
+            var addFunctionNode =
                 AstFactory.BuildFunctionCall(
                     new Func<double, double, double>(NodeModelsEssentialsFunctions.Add),
                     new List<AssociativeNode> { inputAsNodes[0], inputAsNodes[1] });
             
-            var subtractFunctionCall =
+            var subtractFunctionNode =
                 AstFactory.BuildFunctionCall(
                     new Func<double, double, double>(NodeModelsEssentialsFunctions.Subtract),
                     new List<AssociativeNode> { inputAsNodes[0], inputAsNodes[1] });
             
-            var divideFunctionCall =
+            var divideFunctionNode =
                 AstFactory.BuildFunctionCall(
                     new Func<double, double, double>(NodeModelsEssentialsFunctions.Divide),
                     new List<AssociativeNode> { inputAsNodes[0], inputAsNodes[1] });
 
             return new[] {
-                AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), multiplyFunctionCall),
-                AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(1), addFunctionCall),
-                AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(2), subtractFunctionCall),
-                AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(3), divideFunctionCall)
+                AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), multiplyFunctionNode),
+                AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(1), addFunctionNode),
+                AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(2), subtractFunctionNode),
+                AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(3), divideFunctionNode)
             };
         }
     }

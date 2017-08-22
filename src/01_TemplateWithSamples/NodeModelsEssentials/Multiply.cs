@@ -106,14 +106,14 @@ namespace NodeModelsEssentials.Examples
             // and use input nodes 0 and 1 as input values in the fuction
             // Note that we specify input and output value types in new Func<double, double, double>
             // which means we have two double inputs and one double output
-            var functionCall =
+            var functionNode =
                 AstFactory.BuildFunctionCall(
                     new Func<double, double, double>(NodeModelsEssentialsFunctions.Multiply),
                     new List<AssociativeNode> { inputAsNodes[0], inputAsNodes[1] });
 
             // Using the AstFactory class, we can build AstNode objects
             // that assign doubles, assign function calls, build expression lists, etc.
-            return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCall) };
+            return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionNode) };
         }
     }
 }
