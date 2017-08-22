@@ -36,10 +36,10 @@ namespace NodeModelsEssentials.Examples
             if (!HasConnectedInput(0) || !HasConnectedInput(1))
             {
                 return new[] {
-                    AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()),
-                    AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(1), AstFactory.BuildNullNode()),
-                    AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(2), AstFactory.BuildNullNode()),
-                    AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(3), AstFactory.BuildNullNode())
+                    AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildIntNode(1)),
+                    AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(1), AstFactory.BuildIntNode(2)),
+                    AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(2), AstFactory.BuildIntNode(3)),
+                    AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(3), AstFactory.BuildIntNode(4))
                 };
             }
 

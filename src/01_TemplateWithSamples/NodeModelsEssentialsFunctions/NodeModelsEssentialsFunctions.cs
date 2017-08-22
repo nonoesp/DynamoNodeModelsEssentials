@@ -29,6 +29,11 @@ namespace NodeModelsEssentials.Functions
             return a / b;
         }
 
+        public static string GetDate()
+        {
+            return DateTime.Now.ToString("yyMMdd H:mm:ss");
+        }
+
         /// <summary>
         /// A simple node to create a surface from four points.
         /// </summary>
