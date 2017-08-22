@@ -9,11 +9,6 @@ namespace NodeModelsEssentials.Examples
     /*
       * This example shows how to create a node model for Dynamo
       * subclassing the NodeModel class.
-     
-      * Nodes that subclass NodeModel follow a different loading path
-      * than zero touch nodes. The assembly which contains
-      * this node needs to be located in the 'nodes' folder in
-      * Dynamo in order to be loaded at startup.
      */
 
     // <summary>
