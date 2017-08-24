@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Autodesk.DesignScript.Runtime; // needed to add flags like [IsVisibleDynamoLibrary(false)]
 using Autodesk.DesignScript.Geometry;
+using Autodesk.DesignScript.Interfaces;
 
 namespace NodeModelsEssentials.Functions
 {
@@ -116,6 +117,71 @@ namespace NodeModelsEssentials.Functions
             Surface surface = Surface.ByLoft(curves);
 
             return surface;
+        }
+    }
+
+    [IsVisibleInDynamoLibrary(false)]
+    public class MyMesh : IGraphicItem
+    {
+        #region private members
+
+        private static double counter;
+        private Point point = Point.ByCoordinates(0, 2, 0);
+
+        #endregion
+
+        #region properties
+
+        public Point Point { get { return point; } }
+
+        #endregion
+
+
+        private MyMesh(double x, double y, double z)
+        {
+            point = Point.ByCoordinates(x, y, z);
+        }
+
+        public static MyMesh Create(double x = 0, double y = 0, double z = 0)
+        {
+            counter++;
+            return new MyMesh(x, y, z);
+        }
+
+        //public static MyMesh Create([DefaultArgumentAttribute("Point.ByCoordinates(0,0,0);")]Point point)
+        //{
+        //    return new MyMesh(point.X, point.Y, point.Z);
+        //}
+
+        #region IGraphicItem interface
+
+
+        /// <summary>
+        /// The Tessellate method in the IGraphicItem interface allows
+        /// you to specify what is drawn when dynamo's visualization is
+        /// updated.
+        /// </summary>
+        [IsVisibleInDynamoLibrary(false)]
+        public void Tessellate(IRenderPackage package, TessellationParameters parameters)
+        {
+            // This example contains information to draw a point
+            package.AddPointVertex(point.X, point.Y, point.Z);
+            package.AddPointVertexColor(255, 0, 0, 255);
+            package.AddPointVertex(0, 1, 1);
+            package.AddPointVertexColor(255, 0, 0, 255);
+            package.AddPointVertex(0, 2, 2 + counter / 10.0);
+            package.AddPointVertexColor(255, 0, 0, 255);
+            package.AddPointVertex(0, 3, 3 + counter / 10.0);
+            package.AddPointVertexColor(255, 0, 0, 255);
+            package.AddPointVertex(0, 4, 4 + counter / 10.0);
+            package.AddPointVertexColor(255, 0, 0, 255);
+        }
+
+        #endregion
+
+        public override string ToString()
+        {
+            return string.Format("HelloDynamoZeroTouch:{0},{1},{2}", point.X, point.Y, point.Z);
         }
     }
 }

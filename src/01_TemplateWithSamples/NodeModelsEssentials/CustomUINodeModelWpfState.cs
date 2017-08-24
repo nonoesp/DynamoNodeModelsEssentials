@@ -90,7 +90,7 @@ namespace NodeModelsEssentials.Examples
                 number = Math.Round(value, 2); ;
                 RaisePropertyChanged("Number");
 
-                OnNodeModified();
+                //OnNodeModified();
             }
         }
 
@@ -119,13 +119,13 @@ namespace NodeModelsEssentials.Examples
 
         private void ExecutionEvents_GraphPreExecution(Dynamo.Session.IExecutionSession session)
         {
-            number++;
+            Number++;
         }
 
         private void ExecutionEvents_GraphPostExecution(Dynamo.Session.IExecutionSession session)
         {
             Executions++;
-            //this.OnNodeModified(forceExecute: true);
+            this.OnNodeModified(forceExecute: true);
         }
 
         #endregion

@@ -8,6 +8,8 @@ using ProtoCore.AST.AssociativeAST;
 using Autodesk.DesignScript.Runtime;
 using Dynamo.Wpf;
 using NodeModelsEssentials.Functions;
+using NodeModelsEssentials.Controls;
+using Dynamo.UI.Commands;
 
 namespace NodeModelsEssentials.Examples
 {
@@ -20,6 +22,12 @@ namespace NodeModelsEssentials.Examples
     [IsDesignScriptCompatible]
     public class CustomUINodeModelButton : NodeModel
     {
+        #region commands
+
+        public DelegateCommand MyCommand { get; set; }
+
+        #endregion
+
         #region private members
 
         private double number;
@@ -34,6 +42,7 @@ namespace NodeModelsEssentials.Examples
             set
             {
                 number = value;
+                number = Math.Round(value, 2);
                 RaisePropertyChanged("Number");
 
                 OnNodeModified();
@@ -48,12 +57,19 @@ namespace NodeModelsEssentials.Examples
         {
             RegisterAllPorts();
 
+            MyCommand = new DelegateCommand(SayHello);
+
             number = 0.0;
         }
 
         #endregion
 
         #region public methods
+
+        private static void SayHello(object obj)
+        {
+            MessageBox.Show("Hello Dynamo!");
+        }
 
         [IsVisibleInDynamoLibrary(false)]
         public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAsNodes)
@@ -82,21 +98,11 @@ namespace NodeModelsEssentials.Examples
     {
         public void CustomizeView(CustomUINodeModelButton model, NodeView nodeView)
         {
-            var myButton = new Button();
-            myButton.Name = "name";
+            var myWpfView = new MyWpfView();
 
-            nodeView.inputGrid.Children.Add(myButton);
+            nodeView.inputGrid.Children.Add(myWpfView);
 
-            myButton.Click += MyButton_Click;
-            myButton.DataContext = model;
-        }
-
-        private void MyButton_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            var button = sender as Button;
-            var model = ((button.DataContext) as CustomUINodeModelButton);
-            model.Number += 10;
-            button.Content = model.Number.ToString();
+            myWpfView.DataContext = model;
         }
 
         public void Dispose() { }

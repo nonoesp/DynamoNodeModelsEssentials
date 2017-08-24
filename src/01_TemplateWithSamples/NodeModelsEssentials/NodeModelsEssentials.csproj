@@ -131,9 +131,13 @@
     <Compile Include="Controls\MyFirstDynamoControl.xaml.cs">
       <DependentUpon>MyFirstDynamoControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\MyWpfView.xaml.cs">
+      <DependentUpon>MyWpfView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StateDynamoControl.xaml.cs">
       <DependentUpon>StateDynamoControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomPreview.cs" />
     <Compile Include="CustomUINodeModelButton.cs" />
     <Compile Include="CustomUINodeModelWpfState.cs" />
     <Compile Include="CustomUIWpfNodeModel.cs" />
@@ -155,6 +159,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Controls\MyFirstDynamoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MyWpfView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
