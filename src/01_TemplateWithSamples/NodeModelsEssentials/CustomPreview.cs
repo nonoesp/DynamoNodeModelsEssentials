@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace NodeModelsEssentials.Examples
 {
@@ -78,6 +80,12 @@ namespace NodeModelsEssentials.Examples
             // ArgumentLacing = LacingStrategy.CrossProduct;
         }
 
+
+//        [JsonConstructor]
+//        private CustomPreview(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+//{
+//        }
+
         /// <summary>
         /// If this method is not overriden, Dynamo will, by default
         /// pass data through this node. But we wouldn't be here if
@@ -97,7 +105,7 @@ namespace NodeModelsEssentials.Examples
             // AstFactory.BuildNullNode to pass out null.
 
             // If any of the input nodes is not connected, assign output node 0 a null node return value
-            if (!HasConnectedInput(0) || !HasConnectedInput(1) || !HasConnectedInput(2))
+            if(!InPorts[0].Connectors.Any() || !InPorts[1].Connectors.Any() || !InPorts[2].Connectors.Any())
             {
                 return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()) };
             }

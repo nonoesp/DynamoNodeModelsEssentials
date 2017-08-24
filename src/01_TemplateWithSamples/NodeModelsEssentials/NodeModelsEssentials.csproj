@@ -90,6 +90,9 @@
       <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NodeServices2, Version=1.3.0.961, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.1.3.0\lib\net45\NodeServices2.dll</HintPath>
       <Private>False</Private>
@@ -178,8 +181,8 @@
       <SourcePkg Include="pkg.json" />
     </ItemGroup>
     <!-- Copy to Dynamo Core 1.3 packages folder -->
-    <Copy SourceFiles="@(SourceDlls)" DestinationFolder="$(AppData)\Dynamo\Dynamo Core\1.3\packages\$(ProjectName)\bin\%(RecursiveDir)" />
-    <Copy SourceFiles="@(SourcePkg)" DestinationFolder="$(AppData)\Dynamo\Dynamo Core\1.3\packages\$(ProjectName)\" />
+    <Copy SourceFiles="@(SourceDlls)" DestinationFolder="$(AppData)\Dynamo\Dynamo Core\2.0\packages\$(ProjectName)\bin\%(RecursiveDir)" />
+    <Copy SourceFiles="@(SourcePkg)" DestinationFolder="$(AppData)\Dynamo\Dynamo Core\2.0\packages\$(ProjectName)\" />
     <!-- Copy to DynamoNodeModelsEssentials packages folder -->
     <Copy SourceFiles="@(SourceDlls)" DestinationFolder="$(SolutionDir)\..\packages\$(ProjectName)\bin\%(RecursiveDir)" />
     <Copy SourceFiles="@(SourcePkg)" DestinationFolder="$(SolutionDir)\..\packages\$(ProjectName)\" />

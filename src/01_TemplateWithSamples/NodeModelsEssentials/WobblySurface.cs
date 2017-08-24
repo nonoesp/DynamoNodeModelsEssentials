@@ -4,6 +4,7 @@ using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
 using Autodesk.DesignScript.Geometry;
+using System.Linq;
 
 namespace NodeModelsEssentials.Examples
 {
@@ -30,14 +31,17 @@ namespace NodeModelsEssentials.Examples
 
         public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAsNodes)
         {
-            if (!HasConnectedInput(0)
-                || !HasConnectedInput(1)
-                || !HasConnectedInput(2)
-                || !HasConnectedInput(3)
-                || !HasConnectedInput(4)
-                || !HasConnectedInput(5)
-                || !HasConnectedInput(6)
-                || !HasConnectedInput(7))
+
+                if (
+                !InPorts[0].Connectors.Any() ||
+                !InPorts[1].Connectors.Any() ||
+                !InPorts[2].Connectors.Any() ||
+                !InPorts[3].Connectors.Any() ||
+                !InPorts[4].Connectors.Any() ||
+                !InPorts[5].Connectors.Any() ||
+                !InPorts[6].Connectors.Any() ||
+                !InPorts[7].Connectors.Any()
+                )
             {
                 return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()) };
             }

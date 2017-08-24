@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
+using System.Linq;
 
 namespace NodeModelsEssentials.Examples
 {
@@ -33,7 +34,7 @@ namespace NodeModelsEssentials.Examples
 
         public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAsNodes)
         {
-            if (!HasConnectedInput(0) || !HasConnectedInput(1))
+            if (!InPorts[0].Connectors.Any() || !InPorts[1].Connectors.Any())
             {
                 return new[] {
                     AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildIntNode(1)),

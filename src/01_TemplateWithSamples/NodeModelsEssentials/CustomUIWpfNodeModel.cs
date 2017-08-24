@@ -9,6 +9,7 @@ using Dynamo.Wpf;
 using ProtoCore.AST.AssociativeAST;
 using Autodesk.DesignScript.Runtime;
 using NodeModelsEssentials.Controls;
+using System.Linq;
 
 namespace NodeModelsEssentials.Examples
 {
