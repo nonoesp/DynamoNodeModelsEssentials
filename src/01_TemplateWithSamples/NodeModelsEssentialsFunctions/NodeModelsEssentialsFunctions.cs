@@ -34,6 +34,14 @@ namespace NodeModelsEssentials.Functions
         {
             return DateTime.Now.ToString("yyMMdd H:mm:ss");
         }
+       
+        public static object GetItem(List<object> list, int index)
+        {
+            return 2;
+//            if(list.Count <= index)
+  //              return list[index];
+    //        return null;
+        }
 
         /// <summary>
         /// A simple node to create a surface from four points.

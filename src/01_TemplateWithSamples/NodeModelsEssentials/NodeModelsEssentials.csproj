@@ -134,11 +134,15 @@
     <Compile Include="Controls\MyWpfView.xaml.cs">
       <DependentUpon>MyWpfView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SliderBound.xaml.cs">
+      <DependentUpon>SliderBound.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\StateDynamoControl.xaml.cs">
       <DependentUpon>StateDynamoControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomPreview.cs" />
     <Compile Include="CustomUINodeModelButton.cs" />
+    <Compile Include="CustomUINodeModelWpfSliderBound.cs" />
     <Compile Include="CustomUINodeModelWpfState.cs" />
     <Compile Include="CustomUIWpfNodeModel.cs" />
     <Compile Include="Multiply.cs" />
@@ -163,6 +167,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\MyWpfView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SliderBound.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
