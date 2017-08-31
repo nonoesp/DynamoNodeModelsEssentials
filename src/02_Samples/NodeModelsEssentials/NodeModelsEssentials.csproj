@@ -131,6 +131,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CopyableWatch.xaml.cs">
+      <DependentUpon>CopyableWatch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MyFirstDynamoControl.xaml.cs">
       <DependentUpon>MyFirstDynamoControl.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,7 @@
     </Compile>
     <Compile Include="CustomPreview.cs" />
     <Compile Include="CustomUINodeModelButton.cs" />
+    <Compile Include="CustomUINodeModelCopyableWatch.cs" />
     <Compile Include="CustomUINodeModelWpfState.cs" />
     <Compile Include="CustomUIWpfNodeModel.cs" />
     <Compile Include="Multiply.cs" />
@@ -161,6 +165,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Controls\CopyableWatch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\MyFirstDynamoControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

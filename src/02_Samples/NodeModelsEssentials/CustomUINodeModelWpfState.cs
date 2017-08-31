@@ -196,7 +196,6 @@ namespace NodeModelsEssentials.Examples
         {
             var stateDynamoControl = new StateDynamoControl();
             nodeView.inputGrid.Children.Add(stateDynamoControl);
-
             stateDynamoControl.DataContext = model;
         }
 
