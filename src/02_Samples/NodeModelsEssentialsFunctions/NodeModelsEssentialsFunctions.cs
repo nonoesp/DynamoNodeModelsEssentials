@@ -183,5 +183,6 @@ namespace NodeModelsEssentials.Functions
         {
             return string.Format("HelloDynamoZeroTouch:{0},{1},{2}", point.X, point.Y, point.Z);
         }
+
     }
 }

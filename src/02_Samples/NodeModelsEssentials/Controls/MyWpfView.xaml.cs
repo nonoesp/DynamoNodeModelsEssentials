@@ -20,9 +20,12 @@ namespace NodeModelsEssentials.Controls
     /// </summary>
     public partial class MyWpfView : UserControl
     {
+        public Button button;
+
         public MyWpfView()
         {
             InitializeComponent();
+            button = this.FindName("aButton") as Button;
         }
     }
 }

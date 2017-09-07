@@ -145,6 +145,7 @@
     </Compile>
     <Compile Include="CustomPreview.cs" />
     <Compile Include="CustomUINodeModelButton.cs" />
+    <Compile Include="CustomUINodeModelButtonFunction.cs" />
     <Compile Include="CustomUINodeModelCopyableWatch.cs" />
     <Compile Include="CustomUINodeModelWpfState.cs" />
     <Compile Include="CustomUIWpfNodeModel.cs" />

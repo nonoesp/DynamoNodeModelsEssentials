@@ -17,8 +17,11 @@ using VMDataBridge;
 
 namespace NodeModelsEssentials.Examples
 {
+    // This component uses the data bridging strategy
+    // of the original Watch Dynamo node.
+
     [NodeName("CopyableWatch")]
-    [NodeDescription("A watch from which you can copy text =).")]
+    [NodeDescription("A watch node from which you can copy text =).")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames(">")]
     [InPortTypes("object")]
@@ -192,6 +195,9 @@ namespace NodeModelsEssentials.Examples
             var copyableWatch = new CopyableWatch();
             nodeView.inputGrid.Children.Add(copyableWatch);
             nodeView.inputGrid.ClipToBounds = true;
+            
+            //nodeView.MouseLeave += (sender, args) => { MessageBox.Show("MouseLeave"); };
+
             copyableWatch.DataContext = model;
             // add an event to watch properties of the workspace and set model.runtype
             //(nodeView.ViewModel.DynamoViewModel.Model.CurrentWorkspace as HomeWorkspaceModel).RunSettings.RunType
