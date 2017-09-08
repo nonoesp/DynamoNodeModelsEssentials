@@ -22,7 +22,7 @@ namespace NodeModelsEssentials.Examples
 
     // The NodeName attribute is what will display on 
     // top of the node in Dynamo
-    [NodeName("Essentials.CustomPreview")]
+    [NodeName("Geometry.CustomPreview")]
 
     // The description will display in the tooltip
     // and in the help window for the node.

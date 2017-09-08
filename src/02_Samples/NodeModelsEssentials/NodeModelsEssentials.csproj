@@ -151,21 +151,21 @@
     <Compile Include="Controls\StateDynamoControl.xaml.cs">
       <DependentUpon>StateDynamoControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomPreview.cs" />
-    <Compile Include="CustomUINodeModelButton.cs" />
-    <Compile Include="CustomUINodeModelWpfSliderBound.cs" />
-    <Compile Include="CustomUINodeModelButtonFunction.cs" />
-    <Compile Include="CustomUINodeModelCopyableWatch.cs" />
-    <Compile Include="CustomUINodeModelWpfState.cs" />
-    <Compile Include="CustomUIWpfNodeModel.cs" />
-    <Compile Include="Error.cs" />
-    <Compile Include="Multiply.cs" />
-    <Compile Include="MultiOperation.cs" />
+    <Compile Include="GeometryCustomPreview.cs" />
+    <Compile Include="UIButton.cs" />
+    <Compile Include="UISliderBound.cs" />
+    <Compile Include="UIButtonFunction.cs" />
+    <Compile Include="UICopyableWatch.cs" />
+    <Compile Include="UIState.cs" />
+    <Compile Include="UISlider.cs" />
+    <Compile Include="EssentialsError.cs" />
+    <Compile Include="EssentialsMultiply.cs" />
+    <Compile Include="EssentialsMultiOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SurfaceFrom4Points.cs" />
-    <Compile Include="Timeout.cs" />
-    <Compile Include="UVPlanesOnSurface.cs" />
-    <Compile Include="WobblySurface.cs" />
+    <Compile Include="GeometrySurfaceFrom4Points.cs" />
+    <Compile Include="EssentialsTimeout.cs" />
+    <Compile Include="GeometryUVPlanesOnSurface.cs" />
+    <Compile Include="GeometryWobblySurface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

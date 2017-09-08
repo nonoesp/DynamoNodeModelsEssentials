@@ -14,7 +14,7 @@ using NodeModelsEssentials.Functions;
 
 namespace NodeModelsEssentials.Examples
 {
-    [NodeName("UI.WpfState")]
+    [NodeName("UI.State")]
     [NodeDescription("A sample Node Model with custom Wpf UI.")]
     [NodeCategory("NodeModelsEssentials")]
     [OutPortNames("Number", "Date")]

@@ -14,7 +14,7 @@ using System.Linq;
 
 namespace NodeModelsEssentials.Examples
 {
-    [NodeName("UI.WpfSliderBound")]
+    [NodeName("UI.SliderBound")]
     [NodeDescription("A sample Node Model with custom Wpf UI.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("list")]

@@ -30,7 +30,7 @@ namespace NodeModelsEssentials
     [OutPortTypes("object")]
     [OutPortDescriptions("Item")]
     [IsDesignScriptCompatible]
-    public class CustomUINodeModelCopyableWatch : NodeModel
+    public class UICopyableWatch : NodeModel
     {
         #region private members
 
@@ -58,7 +58,7 @@ namespace NodeModelsEssentials
 
         #region constructor
 
-        public CustomUINodeModelCopyableWatch()
+        public UICopyableWatch()
         {
             Executed = new Action(() => {
                 //MessageBox.Show("Executed!");
@@ -188,9 +188,9 @@ namespace NodeModelsEssentials
     /// <summary>
     /// View customizer for CustomUINodeModel Node Model.
     /// </summary>
-    public class CustomUINodeModelCopyableWatchViewCustomization : INodeViewCustomization<CustomUINodeModelCopyableWatch>
+    public class CustomUINodeModelCopyableWatchViewCustomization : INodeViewCustomization<UICopyableWatch>
     {
-        public void CustomizeView(CustomUINodeModelCopyableWatch model, NodeView nodeView)
+        public void CustomizeView(UICopyableWatch model, NodeView nodeView)
         {
             var copyableWatch = new CopyableWatch();
             nodeView.inputGrid.Children.Add(copyableWatch);

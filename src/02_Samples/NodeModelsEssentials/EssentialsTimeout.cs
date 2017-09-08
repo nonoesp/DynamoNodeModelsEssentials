@@ -4,6 +4,7 @@ using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace NodeModelsEssentials
 {
@@ -36,12 +37,12 @@ namespace NodeModelsEssentials
 
         public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAsNodes)
         {
-            //if (!InPorts[0].Connectors.Any())
-            //{
-            //    return new[] {
-            //        AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode())
-            //    };
-            //}
+            if (!InPorts[0].Connectors.Any() || !InPorts[1].Connectors.Any())
+            {
+                return new[] {
+                    AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode())
+                };
+            }
 
             var timeoutFunctionNode =
                 AstFactory.BuildFunctionCall(
