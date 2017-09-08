@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
+//using System.Windows;
+//using System.Windows.Controls;
 using Dynamo.Controls;
 using Dynamo.Graph.Nodes;
 using Dynamo.Events;
-using Dynamo.UI.Commands;
+//using Dynamo.UI.Commands;
 using Dynamo.Wpf;
 using ProtoCore.AST.AssociativeAST;
 using Autodesk.DesignScript.Runtime;
 using NodeModelsEssentials.Controls;
-using NodeModelsEssentials.Functions;
+//using NodeModelsEssentials.Functions;
 using System.Linq;
-using Dynamo.Graph.Workspaces;
+//using Dynamo.Graph.Workspaces;
 using VMDataBridge;
 
-namespace NodeModelsEssentials.Examples
+namespace NodeModelsEssentials
 {
     // This component uses the data bridging strategy
     // of the original Watch Dynamo node.

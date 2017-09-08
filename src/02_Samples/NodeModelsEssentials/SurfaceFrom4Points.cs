@@ -11,7 +11,7 @@ namespace NodeModelsEssentials.Examples
     // <summary>
     // A simple node to create a surface from four points.
     // </summary>
-    [NodeName("Essentials.SurfaceFrom4Points")]
+    [NodeName("Geometry.SurfaceFrom4Points")]
     [NodeDescription("A simple node to create a surface from four points.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("point1", "point2", "point3", "point4")]

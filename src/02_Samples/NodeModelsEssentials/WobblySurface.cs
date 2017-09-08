@@ -12,7 +12,7 @@ namespace NodeModelsEssentials.Examples
     // <summary>
     // Given some size parameters, returns a lofted surface with random bumps.
     // </summary>
-    [NodeName("Essentials.WobblySurface")]
+    [NodeName("Geometry.WobblySurface")]
     [NodeDescription("Given some size parameters, returns a lofted surface with random bumps.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("baseX", "baseY", "baseZ", "width", "length", "maxHeight", "uCount", "vCount")]

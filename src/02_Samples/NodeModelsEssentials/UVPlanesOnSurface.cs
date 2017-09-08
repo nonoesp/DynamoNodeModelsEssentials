@@ -11,7 +11,7 @@ namespace NodeModelsEssentials.Examples
     // <summary>
     // Given a surface, returns a grid of UV tangent planes.
     // </summary>
-    [NodeName("Essentials.UVPlanesOnSurface")]
+    [NodeName("Geometry.UVPlanesOnSurface")]
     [NodeDescription("Given a surface, returns a grid of UV tangent planes.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("surface", "uCount", "vCount")]

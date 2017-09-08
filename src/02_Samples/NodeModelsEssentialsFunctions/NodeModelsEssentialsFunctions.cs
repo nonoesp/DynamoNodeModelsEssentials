@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Autodesk.DesignScript.Runtime; // needed to add flags like [IsVisibleDynamoLibrary(false)]
 using Autodesk.DesignScript.Geometry;
 using Autodesk.DesignScript.Interfaces;
+//using System.Windows;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace NodeModelsEssentials.Functions
 {
@@ -28,6 +31,51 @@ namespace NodeModelsEssentials.Functions
         public static double Divide(double a, double b)
         {
             return a / b;
+        }
+
+        public static string Error(string text)
+        {
+            if (text == "ERROR1")
+            {
+                throw new ArgumentException("ERROR1 raised ArgumentException.");
+            } else if (text == "ERROR2")
+            {
+                throw new Exception("A sample Exception by ERROR2.");
+            }
+            return "Error response";
+        }
+
+        public static string Timeout(int sleepDuration = 1000, int timeoutDuration = 3000)
+        {
+            var taskWasCompleted = false; // wether the C# Task was completed before timeout or not
+            Thread taskThread = null; // reference the thread in which we call Edge.js to abort in case of timeout
+
+            try
+            {
+                taskWasCompleted = Task.Run(() =>
+                {
+                    taskThread = Thread.CurrentThread;
+                    Thread.Sleep(sleepDuration);
+                    //var client = GetClientConnection(Project);
+                    //var propertyWatch = client.GetProperyWatch(Name);
+                    //propertyValue = propertyWatch.Value;
+                }).Wait(timeoutDuration);
+            }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+                // TODO: throw HFDM.js.NET errors (accessible in JSON as e.InnerException.InnerException.Message);
+            }
+
+            if (!taskWasCompleted && taskThread != null)
+            {
+                // Abort taskThread and throw exception
+                taskThread.Abort();
+                throw new Exception("The request timed out (" + timeoutDuration + "ms).");
+            }
+
+            return "Timeout message - " + sleepDuration + " - " + timeoutDuration ;
         }
 
         public static string GetDate()
