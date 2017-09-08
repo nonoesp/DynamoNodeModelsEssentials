@@ -20,7 +20,7 @@ namespace NodeModelsEssentials.Examples
     // This component uses the data bridging strategy
     // of the original Watch Dynamo node.
 
-    [NodeName("CopyableWatch")]
+    [NodeName("UI.CopyableWatch")]
     [NodeDescription("A watch node from which you can copy text =).")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames(">")]

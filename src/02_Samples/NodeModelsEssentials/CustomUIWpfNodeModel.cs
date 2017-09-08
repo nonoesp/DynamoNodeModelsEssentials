@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace NodeModelsEssentials.Examples
 {
-    [NodeName("Essentials.CustomUI.Wpf")]
+    [NodeName("UI.Wpf")]
     [NodeDescription("A sample Node Model with custom Wpf UI.")]
     [NodeCategory("NodeModelsEssentials")]
     [OutPortNames(">")]

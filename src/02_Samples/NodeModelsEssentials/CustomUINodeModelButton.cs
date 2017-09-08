@@ -13,7 +13,7 @@ using Dynamo.UI.Commands;
 
 namespace NodeModelsEssentials.Examples
 {
-    [NodeName("Essentials.CustomUI.Button")]
+    [NodeName("UI.Button")]
     [NodeDescription("A sample Node Model with custom UI.")]
     [NodeCategory("NodeModelsEssentials")]
     [OutPortNames("Result")]

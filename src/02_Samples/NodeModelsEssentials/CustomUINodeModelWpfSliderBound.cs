@@ -10,10 +10,11 @@ using ProtoCore.AST.AssociativeAST;
 using Autodesk.DesignScript.Runtime;
 using NodeModelsEssentials.Controls;
 using NodeModelsEssentials.Functions;
+using System.Linq;
 
 namespace NodeModelsEssentials.Examples
 {
-    [NodeName("Essentials.CustomUI.WpfSliderBound")]
+    [NodeName("UI.WpfSliderBound")]
     [NodeDescription("A sample Node Model with custom Wpf UI.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("list")]
@@ -99,7 +100,7 @@ namespace NodeModelsEssentials.Examples
         [IsVisibleInDynamoLibrary(false)]
         public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAsNodes)
         {
-            if (!HasConnectedInput(0))
+            if (!InPorts[0].Connectors.Any())
             {
                 return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()) };
             }
