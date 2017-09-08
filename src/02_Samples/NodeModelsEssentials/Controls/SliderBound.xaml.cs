@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace NodeModelsEssentials.Controls
 {
     /// <summary>
-    /// Interaction logic for MyWpfView.xaml
+    /// Interaction logic for SliderBound.xaml
     /// </summary>
-    public partial class MyWpfView : UserControl
+    public partial class SliderBound : UserControl
     {
-        public MyWpfView()
+        public SliderBound()
         {
             InitializeComponent();
         }

@@ -9,24 +9,28 @@ using Dynamo.Wpf;
 using ProtoCore.AST.AssociativeAST;
 using Autodesk.DesignScript.Runtime;
 using NodeModelsEssentials.Controls;
+using NodeModelsEssentials.Functions;
 
 namespace NodeModelsEssentials.Examples
 {
-    [NodeName("Essentials.CustomUI.Wpf")]
+    [NodeName("Essentials.CustomUI.WpfSliderBound")]
     [NodeDescription("A sample Node Model with custom Wpf UI.")]
     [NodeCategory("NodeModelsEssentials")]
+    [InPortNames("list")]
+    [InPortTypes("List<object>")]
+    [InPortDescriptions("A list of items.")]
     [OutPortNames(">")]
-    [OutPortTypes("double")]
-    [OutPortDescriptions("Double")]
+    [OutPortTypes("object")]
+    [OutPortDescriptions("Item")]
     [IsDesignScriptCompatible]
-    public class CustomUIWpfNodeModel : NodeModel
+    public class CustomUINodeModelWpfSliderBound : NodeModel
     {
         #region private members
 
-        private double number;
-        private double maximumValue;
-        private double minimumValue;
-        private double step;
+        private int index;
+        private int maximumValue;
+        private int minimumValue;
+        private int step;
 
         #endregion
 
@@ -38,7 +42,7 @@ namespace NodeModelsEssentials.Examples
         [IsVisibleInDynamoLibrary(false)]
         public DelegateCommand DecreaseCommand { get; set; }
 
-        public double MinimumValue
+        public int MinimumValue
         {
             get { return minimumValue; }
             set
@@ -47,7 +51,7 @@ namespace NodeModelsEssentials.Examples
                 RaisePropertyChanged("MinimumValue");
             }
         }
-        public double MaximumValue
+        public int MaximumValue
         {
             get { return maximumValue; }
             set
@@ -57,13 +61,14 @@ namespace NodeModelsEssentials.Examples
             }
         }
 
-        public double Number
+        public int Index
         {
-            get { return number; }
+            get { return index; }
             set
             {
-                number = Math.Round(value, 2); ;
-                RaisePropertyChanged("Number");
+                index = value;
+                //index = Math.Round(value, 2); ;
+                RaisePropertyChanged("Index");
 
                 OnNodeModified();
             }
@@ -73,16 +78,18 @@ namespace NodeModelsEssentials.Examples
 
         #region constructor
 
-        public CustomUIWpfNodeModel()
+        public CustomUINodeModelWpfSliderBound()
         {
             RegisterAllPorts();
 
             IncreaseCommand = new DelegateCommand(IncreaseNumber);
             DecreaseCommand = new DelegateCommand(DecreaseNumber);
 
-            MinimumValue = 0.0;
-            MaximumValue = 100.0;
-            step = 10.0;
+            MinimumValue = 0;
+            MaximumValue = 100;
+            step = 10;
+
+            index = 5;
         }
 
         #endregion
@@ -92,17 +99,22 @@ namespace NodeModelsEssentials.Examples
         [IsVisibleInDynamoLibrary(false)]
         public override IEnumerable<AssociativeNode> BuildOutputAst(List<AssociativeNode> inputAsNodes)
         {
-            var doubleNode = AstFactory.BuildDoubleNode(number);
+            if (!HasConnectedInput(0))
+            {
+                return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()) };
+            }
 
-            //var funcNode = AstFactory.BuildFunctionCall(
-            //    new Func<double, double, double>(NodeModelsEssentialsFunctions.Multiply),
-            //    new List<AssociativeNode>() { doubleNode, doubleNode }
-            //    );
+            var indexNode = AstFactory.BuildIntNode(index);
+            
+            var funcNode = AstFactory.BuildFunctionCall(
+                new Func<List<object>, int, object>(NodeModelsEssentialsFunctions.GetItem),
+                new List<AssociativeNode>() { inputAsNodes[0], indexNode }
+                );
 
             return new[]
             {
                 AstFactory.BuildAssignment(
-                    GetAstIdentifierForOutputIndex(0), doubleNode)
+                    GetAstIdentifierForOutputIndex(0), funcNode)
             };
         }
 
@@ -112,23 +124,25 @@ namespace NodeModelsEssentials.Examples
 
         private void IncreaseNumber(object obj)
         {
-            if (Number + step >= MaximumValue)
+            if (Index + step >= MaximumValue)
             {
-                Number = MaximumValue;
-            } else
+                Index = MaximumValue;
+            }
+            else
             {
-                Number += step;
+                Index += step;
             }
         }
         private void DecreaseNumber(object obj)
         {
 
-            if (Number - step <= MinimumValue)
+            if (Index - step <= MinimumValue)
             {
-                Number = MinimumValue;
-            } else
+                Index = MinimumValue;
+            }
+            else
             {
-                Number += -step;
+                Index += -step;
             }
         }
 
@@ -138,16 +152,19 @@ namespace NodeModelsEssentials.Examples
     /// <summary>
     /// View customizer for CustomUINodeModel Node Model.
     /// </summary>
-    public class CustomUIWpfNodeModelViewCustomization : INodeViewCustomization<CustomUIWpfNodeModel>
+    public class CustomUINodeModelWpfSliderBoundViewCustomization : INodeViewCustomization<CustomUINodeModelWpfSliderBound>
     {
-        public void CustomizeView(CustomUIWpfNodeModel model, NodeView nodeView)
+        public void CustomizeView(CustomUINodeModelWpfSliderBound model, NodeView nodeView)
         {
-            var myFirstDynamoControl = new MyFirstDynamoControl();
-            nodeView.inputGrid.Children.Add(myFirstDynamoControl);
+            var mySliderBound = new SliderBound();
+            nodeView.inputGrid.Children.Add(mySliderBound);
 
-            myFirstDynamoControl.DataContext = model;
+            mySliderBound.DataContext = model;
         }
 
         public void Dispose() { }
     }
 }
+
+
+

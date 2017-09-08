@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
+using System.Linq;
 
 namespace NodeModelsEssentials.Examples
 {
@@ -97,7 +98,7 @@ namespace NodeModelsEssentials.Examples
             // AstFactory.BuildNullNode to pass out null.
 
             // If any of the input nodes is not connected, assign output node 0 a null node return value
-            if (!HasConnectedInput(0) || !HasConnectedInput(1))
+            if (!InPorts[0].Connectors.Any() || !InPorts[1].Connectors.Any())
             {
                 return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()) };
             }

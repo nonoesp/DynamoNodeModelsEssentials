@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="{Binding Number}" HorizontalAlignment="Left" Margin="38,10,0,0" VerticalAlignment="Top"/>
         <Slider Value="{Binding Number}" HorizontalAlignment="Left" Margin="0,48,0,0" VerticalAlignment="Top" Width="193"/>
-        <Button Content="Execute Command" Command="{Binding MyCommand}" HorizontalAlignment="Left" Margin="38,92,0,0" VerticalAlignment="Top" Width="141"/>
+        <Button Name="aButton" Content="Execute Command" Command="{Binding MyCommand}" HorizontalAlignment="Left" Margin="38,92,0,0" VerticalAlignment="Top" Width="141"/>
 
     </Grid>
 </UserControl>
