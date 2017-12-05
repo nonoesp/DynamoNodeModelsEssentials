@@ -151,6 +151,8 @@
     <Compile Include="Controls\StateDynamoControl.xaml.cs">
       <DependentUpon>StateDynamoControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EssentialsDataBridge.cs" />
+    <Compile Include="EssentialsMultiOperationReusingAst.cs" />
     <Compile Include="GeometryCustomPreview.cs" />
     <Compile Include="UIButton.cs" />
     <Compile Include="UISliderBound.cs" />

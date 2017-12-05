@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Autodesk.DesignScript.Runtime; // needed to add flags like [IsVisibleDynamoLibrary(false)]
 using Autodesk.DesignScript.Geometry;
 using Autodesk.DesignScript.Interfaces;
-//using System.Windows;
 using System.Threading;
 using System.Threading.Tasks;
+//using System.Windows;
 
 namespace NodeModelsEssentials.Functions
 {
@@ -31,6 +31,16 @@ namespace NodeModelsEssentials.Functions
         public static double Divide(double a, double b)
         {
             return a / b;
+        }
+
+        public static double Sum(double a, double b, double c, double d)
+        {
+            return a + b + c + d;
+        }
+
+        public static string ConcatenateThree(string a, string b, string c)
+        {
+            return string.Join(", ", new List<string>{ a, b, c });
         }
 
         public static string Error(string text)
