@@ -12,6 +12,11 @@ namespace NodeModelsEssentials
 {
     /// <summary>
     /// A node that displays how a data bridge can be used within a Node Model.
+    /// Something to note is that the data bridge callback passes an expression list
+    /// to pass all of the input nodes to the callback, thus providing the input of
+    /// the node ports to the Node Model class.
+    /// (This happens using AstFactory.BuildExprList(inputAstNodes), but you could
+    /// also just pass a single node, or a list of nodes, like inputAstNodes[0].)
     /// </summary>
     [NodeName("Essentials.DataBridge")]
     [NodeDescription("Empty.")]
@@ -69,10 +74,12 @@ namespace NodeModelsEssentials
         private void DataBridgeCallback(object data)
         {
             ArrayList inputs = data as ArrayList;
+            var str = "";
             foreach (var input in inputs)
             {
-                MessageBox.Show(input.ToString());
+                str += input.ToString();
             }
+            MessageBox.Show("Data bridge callback of node " + GUID.ToString().Substring(0,5) + ": " + str );
         }
 
         #endregion
