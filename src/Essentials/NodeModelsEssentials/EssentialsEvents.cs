@@ -38,12 +38,14 @@ namespace NodeModelsEssentials
 
         private void ExecutionEvents_GraphPostExecution(Dynamo.Session.IExecutionSession session)
         {
-            MessageBox.Show("Post execution event of this node.");
+            var guid = GUID.ToString().Substring(0, 5);
+            MessageBox.Show("Post execution event of node " + guid + ".");
         }
 
         private void ExecutionEvents_GraphPreExecution(Dynamo.Session.IExecutionSession session)
         {
-            MessageBox.Show("Pre execution event of this node.");
+            var guid = GUID.ToString().Substring(0, 5);
+            MessageBox.Show("Pre execution event of node " + guid + ".");
         }
 
         public EssentialsEvents()
@@ -52,10 +54,30 @@ namespace NodeModelsEssentials
             RegisterExecutionEvents();
         }
 
+        /// <summary>
+        /// Subscribe to pre and post graph execution events.
+        /// </summary>
         public void RegisterExecutionEvents()
         {
             ExecutionEvents.GraphPreExecution += ExecutionEvents_GraphPreExecution;
             ExecutionEvents.GraphPostExecution += ExecutionEvents_GraphPostExecution;
+        }
+
+        /// <summary>
+        /// Unsubscribe from pre and post graph execution events.
+        /// </summary>
+        public void UnregisterExecutionEvents()
+        {
+            ExecutionEvents.GraphPreExecution -= ExecutionEvents_GraphPreExecution;
+            ExecutionEvents.GraphPostExecution -= ExecutionEvents_GraphPostExecution;
+        }
+        
+        // It's important to unregister from execution events, otherwise this events
+        // will still be called even when the node is removed from the Dynamo graph.
+        public override void Dispose()
+        {
+            base.Dispose();
+            UnregisterExecutionEvents();
         }
 
         #endregion
