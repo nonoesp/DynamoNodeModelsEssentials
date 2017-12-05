@@ -77,7 +77,7 @@ namespace NodeModelsEssentials
             var str = "";
             foreach (var input in inputs)
             {
-                str += input.ToString();
+                str += input.ToString() + " ";
             }
             MessageBox.Show("Data bridge callback of node " + GUID.ToString().Substring(0,5) + ": " + str );
         }
@@ -103,7 +103,10 @@ namespace NodeModelsEssentials
                     AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCallNode),
                     AstFactory.BuildAssignment(
                         AstFactory.BuildIdentifier(AstIdentifierBase + "_dummy"),
+                        // you can pass an expression list like this
                         VMDataBridge.DataBridge.GenerateBridgeDataAst(GUID.ToString(), AstFactory.BuildExprList(inputAstNodes))
+                        // or build it manually like this
+                        //VMDataBridge.DataBridge.GenerateBridgeDataAst(GUID.ToString(), AstFactory.BuildExprList(new List<AssociativeNode> { inputAstNodes[0], AstFactory.BuildStringNode("test") } ))
                     )
                 };
         }
