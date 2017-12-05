@@ -7,7 +7,6 @@ using NodeModelsEssentials.Functions;
 using System.Linq;
 using Newtonsoft.Json;
 using System.Windows;
-using Dynamo.Events;
 
 namespace NodeModelsEssentials
 {
@@ -32,19 +31,6 @@ namespace NodeModelsEssentials
         [JsonConstructor]
         private EssentialsDataBridge(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
         {
-            // This two don't seem to run on Manual mode.
-            ExecutionEvents.GraphPreExecution += ExecutionEvents_GraphPreExecution;
-            ExecutionEvents.GraphPostExecution += ExecutionEvents_GraphPostExecution;
-        }
-
-        private void ExecutionEvents_GraphPostExecution(Dynamo.Session.IExecutionSession session)
-        {
-            MessageBox.Show("Post execution event of this node.");
-        }
-
-        private void ExecutionEvents_GraphPreExecution(Dynamo.Session.IExecutionSession session)
-        {
-            MessageBox.Show("Pre execution event of this node.");
         }
 
         public EssentialsDataBridge()

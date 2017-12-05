@@ -11,7 +11,7 @@ namespace NodeModelsEssentials.Examples
     // Sample Node Model called MultiplyMulti.
     // It returns the product of two numbers and a verbose string.
     // </summary>
-    [NodeName("Essentials.MultiOperationReusingAst")]
+    [NodeName("Essentials.AstReuseFunctionCall")]
     [NodeDescription("Performs multiple operations with the inputs.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("A", "B")]
@@ -67,19 +67,19 @@ namespace NodeModelsEssentials.Examples
 
             var multiplyNodeIdentifier = AstFactory.BuildIdentifier(GUID.ToString() + "_multiply");
             var multiplyNode = AstFactory.BuildAssignment(multiplyNodeIdentifier, multiplyFunctionNode);
-            AstFactory.Build
 
-            var sumFunctionNode =
-                AstFactory.BuildFunctionCall(
-                    new Func<double, double, double, double, double>(NodeModelsEssentialsFunctions.Sum),
-                    new List<AssociateNode> { multiplyNode, addFunctionNode, subtractFunctionNode, divideFunctionNode });
+
+            //var sumFunctionNode =
+            //    AstFactory.BuildFunctionCall(
+            //        new Func<double, double, double, double, double>(NodeModelsEssentialsFunctions.Sum),
+            //        new List<AssociateNode> { multiplyNode, addFunctionNode, subtractFunctionNode, divideFunctionNode });
 
             return new[] {
                 AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), multiplyFunctionNode),
                 AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(1), addFunctionNode),
                 AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(2), subtractFunctionNode),
                 AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(3), divideFunctionNode),
-                AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(4), sumFunctionNode),
+               // AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(4), sumFunctionNode),
             };
         }
     }
