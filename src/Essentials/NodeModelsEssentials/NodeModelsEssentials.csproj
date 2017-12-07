@@ -204,6 +204,25 @@
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="PostBuildMacros">
+    <GetAssemblyIdentity AssemblyFiles="$(TargetPath)">
+      <Output TaskParameter="Assemblies" ItemName="Targets" />
+    </GetAssemblyIdentity>
+    <ItemGroup>
+      <VersionNumber Include="$([System.Text.RegularExpressions.Regex]::Replace(&quot;%(Targets.Version)&quot;, &quot;^(.+?)(\.0+)$&quot;, &quot;$1&quot;))" />
+    </ItemGroup>
+  </Target>
+  <PropertyGroup>
+    <PostBuildEventDependsOn>
+      $(PostBuildEventDependsOn);
+      PostBuildMacros;
+    </PostBuildEventDependsOn>
+    <PostBuildEvent>
+    echo { "license":"MIT", "file_hash":null, "name":"DynamoNodeModelsEssentials", "version":"@(VersionNumber)", "description":"Dynamo node samples.", "group":"DynamoNodeModelsEssentials", "keywords":[ "dynamo", "samples", "essentials"], "dependencies":[], "contents":"Sample Dynamo nodes.", "engine_version":"1.0.0", "engine":"dynamo", "engine_metadata":"", "site_url":"", "repository_url":"", "contains_binaries":true,  "node_libraries":[ "NodeModelsEssentials,  Version=@(VersionNumber),  Culture=neutral,  PublicKeyToken=null",   "NodeModelsEssentialsFunctions,  Version=1.0.0,  Culture=neutral,  PublicKeyToken=null"]} &gt; $(ProjectDir)pkg.json 
+    echo NodeModelsEssentials @(VersionNumber). 
+    exit 0
+   </PostBuildEvent>
+  </PropertyGroup>
   <Target Name="AfterBuild">
     <ItemGroup>
       <SourceDlls Include="$(TargetDir)*.dll" />
