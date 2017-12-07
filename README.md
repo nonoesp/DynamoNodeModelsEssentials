@@ -6,8 +6,8 @@ This project provides a Visual Studio template for advanced Dynamo package devel
 
 ### Essentials
 
-- [AstReusingFunctionCall](src/Essentials/NodeModelsEssentials/EssentialsAstReusingFunctionCall.cs). This node displays a desirable way of using the AST where function calls are executed only once and return values are re-used. (Read node summary for detailed explanation.)
-- [AstNotReusingFunctionCall](src/Essentials/NodeModelsEssentials/EssentialsAstNotReusingFunctionCall.cs). This node displays a non-desirable way of using the AST where function calls are executed multiple times and return values are not re-used. (Read node summary for detailed explanation.)
+- [AstReusingFunctionCall](src/Essentials/NodeModelsEssentials/EssentialsAstReusingFunctionCall.cs). This node displays a desirable way to use the AST (Abstract Syntax Tree) where function calls are executed only once and return values are re-used. (Read node summary for detailed explanation.)
+- [AstNotReusingFunctionCall](src/Essentials/NodeModelsEssentials/EssentialsAstNotReusingFunctionCall.cs). This node displays a non-desirable way to use the AST where function calls are executed multiple times and return values are not re-used. (Read node summary for detailed explanation.)
 - [DataBridge](src/Essentials/NodeModelsEssentials/EssentialsDataBridge.cs). How the data bridge pattern works in order to pass the data connected to input ports (or the data of generated for the output ports) to the `NodeModel` instance.
 - [Error](src/Essentials/NodeModelsEssentials/EssentialsError.cs). Throw a custom warning when something fails.
 - [Events](src/Essentials/NodeModelsEssentials/EssentialsEvents.cs). Execute a custom 
