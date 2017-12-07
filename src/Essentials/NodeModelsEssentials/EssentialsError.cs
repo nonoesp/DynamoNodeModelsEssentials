@@ -26,10 +26,10 @@ namespace NodeModelsEssentials
 
     public class Error : NodeModel
     {
-        //[JsonConstructor]
-        //private Error(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
-        //{
-        //}
+        [JsonConstructor]
+        private Error(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+        {
+        }
 
         public Error()
         {

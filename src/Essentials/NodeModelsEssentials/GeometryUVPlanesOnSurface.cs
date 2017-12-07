@@ -5,8 +5,9 @@ using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
 using Autodesk.DesignScript.Geometry;
 using System.Linq;
+using Newtonsoft.Json;
 
-namespace NodeModelsEssentials.Examples
+namespace NodeModelsEssentials
 {
     // <summary>
     // Given a surface, returns a grid of UV tangent planes.
@@ -23,6 +24,11 @@ namespace NodeModelsEssentials.Examples
     [IsDesignScriptCompatible]
     public class UVPlanesOnSurface : NodeModel
     {
+        [JsonConstructor]
+        private UVPlanesOnSurface(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+        {
+        }
+
         public UVPlanesOnSurface()
         {
             RegisterAllPorts();

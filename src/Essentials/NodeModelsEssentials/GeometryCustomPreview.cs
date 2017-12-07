@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
-using Newtonsoft.Json;
 using System.Linq;
+using Newtonsoft.Json;
 
-namespace NodeModelsEssentials.Examples
+namespace NodeModelsEssentials
 {
     /*
       * This example shows how to create a node model for Dynamo
@@ -63,6 +63,18 @@ namespace NodeModelsEssentials.Examples
     [IsDesignScriptCompatible]
     public class CustomPreview : NodeModel
     {
+        /// <summary>
+        /// The JSON constructor of a NodeModel is used to
+        /// instantiate (or deserialize) a node when read
+        /// from a JSON .dyn file.
+        /// </summary>
+        /// <param name="inPorts"></param>
+        /// <param name="outPorts"></param>
+        [JsonConstructor]
+        private CustomPreview(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+        {
+        }
+
         /// <summary>
         /// The constructor for a NodeModel is used to create
         /// the input and output ports and specify the argument

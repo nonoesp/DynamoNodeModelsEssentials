@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
-using Newtonsoft.Json;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace NodeModelsEssentials
 {

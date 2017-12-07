@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
 using Dynamo.Controls;
 using Dynamo.Graph.Nodes;
 using Dynamo.UI.Commands;
@@ -11,8 +9,9 @@ using Autodesk.DesignScript.Runtime;
 using NodeModelsEssentials.Controls;
 using NodeModelsEssentials.Functions;
 using System.Linq;
+using Newtonsoft.Json;
 
-namespace NodeModelsEssentials.Examples
+namespace NodeModelsEssentials
 {
     [NodeName("UI.SliderBound")]
     [NodeDescription("A sample Node Model with custom Wpf UI.")]
@@ -78,6 +77,11 @@ namespace NodeModelsEssentials.Examples
         #endregion
 
         #region constructor
+
+        [JsonConstructor]
+        private CustomUINodeModelWpfSliderBound(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+        {
+        }
 
         public CustomUINodeModelWpfSliderBound()
         {

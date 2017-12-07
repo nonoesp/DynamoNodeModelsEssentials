@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-//using System.Windows;
-//using System.Windows.Controls;
 using Dynamo.Controls;
 using Dynamo.Graph.Nodes;
 using Dynamo.Events;
-//using Dynamo.UI.Commands;
 using Dynamo.Wpf;
 using ProtoCore.AST.AssociativeAST;
 using Autodesk.DesignScript.Runtime;
 using NodeModelsEssentials.Controls;
-//using NodeModelsEssentials.Functions;
 using System.Linq;
-//using Dynamo.Graph.Workspaces;
 using VMDataBridge;
+using Newtonsoft.Json;
 
 namespace NodeModelsEssentials
 {
@@ -57,6 +53,11 @@ namespace NodeModelsEssentials
         #endregion
 
         #region constructor
+
+        [JsonConstructor]
+        private UICopyableWatch(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+        {
+        }
 
         public UICopyableWatch()
         {

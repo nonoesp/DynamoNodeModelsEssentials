@@ -5,8 +5,9 @@ using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
 using Autodesk.DesignScript.Geometry;
 using System.Linq;
+using Newtonsoft.Json;
 
-namespace NodeModelsEssentials.Examples
+namespace NodeModelsEssentials
 {
     // <summary>
     // A simple node to create a surface from four points.
@@ -27,6 +28,11 @@ namespace NodeModelsEssentials.Examples
     [IsDesignScriptCompatible]
     public class SurfaceFrom4Points : NodeModel
     {
+        [JsonConstructor]
+        private SurfaceFrom4Points(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+        {
+        }
+
         public SurfaceFrom4Points()
         {
             RegisterAllPorts();

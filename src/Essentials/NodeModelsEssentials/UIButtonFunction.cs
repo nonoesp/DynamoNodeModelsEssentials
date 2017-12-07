@@ -11,8 +11,9 @@ using NodeModelsEssentials.Functions;
 using NodeModelsEssentials.Controls;
 using Dynamo.UI.Commands;
 using VMDataBridge;
+using Newtonsoft.Json;
 
-namespace NodeModelsEssentials.Examples
+namespace NodeModelsEssentials
 {
     [NodeName("UI.ButtonFunction")]
     [NodeDescription("A sample Node Model with custom UI.")]
@@ -55,6 +56,11 @@ namespace NodeModelsEssentials.Examples
         #endregion
 
         #region constructor
+
+        [JsonConstructor]
+        private CustomUINodeModelButtonFunction(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+        {
+        }
 
         public CustomUINodeModelButtonFunction()
         {

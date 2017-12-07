@@ -37,14 +37,14 @@ namespace NodeModelsEssentials
         "Division of A by B",
         "Sum of all outputs")]
     [IsDesignScriptCompatible]
-    class AstReuseFunction : NodeModel
+    class AstReusingFunctionCall : NodeModel
     {
         [JsonConstructor]
-        private AstReuseFunction(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+        private AstReusingFunctionCall(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
         {
         }
 
-        public AstReuseFunction()
+        public AstReusingFunctionCall()
         {
             RegisterAllPorts();
         }

@@ -4,8 +4,9 @@ using Dynamo.Graph.Nodes;
 using ProtoCore.AST.AssociativeAST;
 using NodeModelsEssentials.Functions;
 using System.Linq;
+using Newtonsoft.Json;
 
-namespace NodeModelsEssentials.Examples
+namespace NodeModelsEssentials
 {
     // <summary>
     // Sample Node Model called MultiplyMulti.
@@ -27,6 +28,11 @@ namespace NodeModelsEssentials.Examples
     [IsDesignScriptCompatible]
     public class MultiOperation : NodeModel
     {
+        [JsonConstructor]
+        private MultiOperation(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+        {
+        }
+
         public MultiOperation()
         {
             RegisterAllPorts();
