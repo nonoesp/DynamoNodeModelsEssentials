@@ -6,7 +6,8 @@ This project provides a Visual Studio template for advanced Dynamo package devel
 
 ### Essentials
 
-- AstReuseFunctionCall.
+- AstReusingFunctionCall. This node displays a desirable way of using the AST where function calls are executed only once and return values are re-used. (Read node summary for detailed explanation.)
+- AstNotReusingFunctionCall. This node displays a non-desirable way of using the AST where function calls are executed multiple times and return values are not re-used. (Read node summary for detailed explanation.)
 - DataBridge. How the data bridge pattern works in order to pass the data connected to input ports (or the data of generated for the output ports) to the `NodeModel` instance.
 - Error. Throw a custom warning when something fails.
 - Events. Execute a custom 
