@@ -13,7 +13,7 @@ namespace NodeModelsEssentials
     // It returns the product of two numbers and a verbose string.
     // </summary>
     [NodeName("Essentials.Error")]
-    [NodeDescription("Throws an error.")]
+    [NodeDescription("Throw a custom warning when something fails.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("In")]
     [InPortTypes("string")]

@@ -19,7 +19,7 @@ namespace NodeModelsEssentials
     /// also just pass a single node, or a list of nodes, like inputAstNodes[0].)
     /// </summary>
     [NodeName("Essentials.DataBridge")]
-    [NodeDescription("Empty.")]
+    [NodeDescription("How the data bridge pattern works in order to pass the data connected to input ports (or the data of generated for the output ports) to the NodeModel instance.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("A", "B", "C")]
     [InPortTypes("string", "string", "string")]

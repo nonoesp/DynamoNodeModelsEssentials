@@ -13,7 +13,7 @@ namespace NodeModelsEssentials
     // It returns the product of two numbers and a verbose string.
     // </summary>
     [NodeName("Essentials.MultiOperation")]
-    [NodeDescription("Performs multiple operations with the inputs.")]
+    [NodeDescription("A node that calls four different functions and returns the resulting values, i.e., a multi-return NodeModel.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("A", "B")]
     [InPortTypes("double", "double")]

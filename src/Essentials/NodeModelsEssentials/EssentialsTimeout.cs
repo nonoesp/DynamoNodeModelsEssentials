@@ -13,7 +13,7 @@ namespace NodeModelsEssentials
     // It returns the product of two numbers and a verbose string.
     // </summary>
     [NodeName("Essentials.Timeout")]
-    [NodeDescription("Sleeps for a bit and throws an error if the sleeping times out.")]
+    [NodeDescription("Sleeps for a bit and throws an error if the sleeping times out. Determine the maximum duration a node can run for (and time out if it surpasses it).")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("Sleep", "Timeout")]
     [InPortTypes("int", "int")]

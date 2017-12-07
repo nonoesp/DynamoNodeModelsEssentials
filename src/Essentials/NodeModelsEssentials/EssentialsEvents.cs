@@ -15,7 +15,7 @@ namespace NodeModelsEssentials
     /// the Essentials.Events node is modified.
     /// </summary>
     [NodeName("Essentials.Events")]
-    [NodeDescription("Empty.")]
+    [NodeDescription("Execute a method of a NodeModel on the pre and post graph execution events of the graph.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("In")]
     [InPortTypes("string")]

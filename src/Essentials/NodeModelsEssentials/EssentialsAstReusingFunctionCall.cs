@@ -23,7 +23,7 @@ namespace NodeModelsEssentials
     // executed once).
     // </summary>
     [NodeName("Essentials.AstReusingFunctionCall")]
-    [NodeDescription("Performs multiple operations with the inputs.")]
+    [NodeDescription("This node displays a desirable way to use the AST (Abstract Syntax Tree) where function calls are executed only once and return values are re-used.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("A", "B")]
     [InPortTypes("double", "double")]

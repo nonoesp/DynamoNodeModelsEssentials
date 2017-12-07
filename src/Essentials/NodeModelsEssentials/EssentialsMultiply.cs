@@ -26,7 +26,7 @@ namespace NodeModelsEssentials
 
     // The description will display in the tooltip
     // and in the help window for the node.
-    [NodeDescription("Multiplies A x B.")]
+    [NodeDescription("Multiplies A x B. A node that calls a function with two inputs and returns the resulting value.")]
 
     // The NodeCategory attribute determines how your
     // node will be organized in the library. You can

@@ -19,7 +19,7 @@ namespace NodeModelsEssentials
     // the sum node and the output port will have different values.
     // </summary>
     [NodeName("Essentials.AstNotReusingFunctionCall")]
-    [NodeDescription("Performs multiple operations with the inputs.")]
+    [NodeDescription("This node displays a non-desirable way to use the AST where function calls are executed multiple times and return values are not re-used.")]
     [NodeCategory("NodeModelsEssentials")]
     [InPortNames("A", "B")]
     [InPortTypes("double", "double")]
