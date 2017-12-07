@@ -6,30 +6,30 @@ This project provides a Visual Studio template for advanced Dynamo package devel
 
 ### Essentials
 
-- AstReusingFunctionCall. This node displays a desirable way of using the AST where function calls are executed only once and return values are re-used. (Read node summary for detailed explanation.)
-- AstNotReusingFunctionCall. This node displays a non-desirable way of using the AST where function calls are executed multiple times and return values are not re-used. (Read node summary for detailed explanation.)
-- DataBridge. How the data bridge pattern works in order to pass the data connected to input ports (or the data of generated for the output ports) to the `NodeModel` instance.
-- Error. Throw a custom warning when something fails.
-- Events. Execute a custom 
-- MultiOperation. A node that calls four different functions and returns the resulting values, i.e., a multi-return `NodeModel`.
-- Multiply. A node that calls a function with two inputs and returns the resulting value.
-- Timeout. Determine the maximum duration a node can run for (and time out if it surpasses it).
+- [AstReusingFunctionCall](src/Essentials/NodeModelsEssentials/EssentialsAstReusingFunctionCall.cs). This node displays a desirable way of using the AST where function calls are executed only once and return values are re-used. (Read node summary for detailed explanation.)
+- [AstNotReusingFunctionCall](src/Essentials/NodeModelsEssentials/EssentialsAstNotReusingFunctionCall.cs). This node displays a non-desirable way of using the AST where function calls are executed multiple times and return values are not re-used. (Read node summary for detailed explanation.)
+- [DataBridge](src/Essentials/NodeModelsEssentials/EssentialsDataBridge.cs). How the data bridge pattern works in order to pass the data connected to input ports (or the data of generated for the output ports) to the `NodeModel` instance.
+- [Error](src/Essentials/NodeModelsEssentials/EssentialsError.cs). Throw a custom warning when something fails.
+- [Events](src/Essentials/NodeModelsEssentials/EssentialsEvents.cs). Execute a custom 
+- [MultiOperation](src/Essentials/NodeModelsEssentials/EssentialsMultiOperation.cs). A node that calls four different functions and returns the resulting values, i.e., a multi-return `NodeModel`.
+- [Multiply](src/Essentials/NodeModelsEssentials/EssentialsMultiply.cs). A node that calls a function with two inputs and returns the resulting value.
+- [Timeout](src/Essentials/NodeModelsEssentials/EssentialsTimeout.cs). Determine the maximum duration a node can run for (and time out if it surpasses it).
 
 ### Geometry
 
-- CustomPreview. Specify how the viewport should render a custom C# class when it's returned by a Dynamo node.
-- SurfaceFrom4Points.
-- UVPlanesOnSurface.
-- WobblySurface.
+- [CustomPreview](src/Essentials/NodeModelsEssentials/GeometryCustomPreview.cs). Specify how the viewport should render a custom C# class when it's returned by a Dynamo node.
+- [SurfaceFrom4Points](src/Essentials/NodeModelsEssentials/GeometrySurfaceFrom4Points.cs).
+- [UVPlanesOnSurface](src/Essentials/NodeModelsEssentials/GeometryUVPlanesOnSurface.cs).
+- [WobblySurface](src/Essentials/NodeModelsEssentials/GeometryWobblySurface.cs).
 
 ### UI
 
-- Button.
-- ButtonFunction.
-- CopyableWatch.
-- Slider.
-- SliderBound.
-- State.
+- [Button](src/Essentials/NodeModelsEssentials/UIButton.cs).
+- [ButtonFunction](src/Essentials/NodeModelsEssentials/UIButtonFunction.cs).
+- [CopyableWatch](src/Essentials/NodeModelsEssentials/UICopyableWatch.cs).
+- [Slider](src/Essentials/NodeModelsEssentials/UISlider.cs).
+- [SliderBound](src/Essentials/NodeModelsEssentials/UISliderBound.cs).
+- [State](src/Essentials/NodeModelsEssentials/UIState.cs).
 
 ## Acknowledgments
 
