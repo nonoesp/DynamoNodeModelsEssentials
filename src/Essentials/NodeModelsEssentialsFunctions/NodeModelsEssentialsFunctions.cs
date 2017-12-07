@@ -5,7 +5,7 @@ using Autodesk.DesignScript.Geometry;
 using Autodesk.DesignScript.Interfaces;
 using System.Threading;
 using System.Threading.Tasks;
-//using System.Windows;
+using System.IO;
 
 namespace NodeModelsEssentials.Functions
 {
@@ -36,6 +36,34 @@ namespace NodeModelsEssentials.Functions
         public static double Sum(double a, double b, double c, double d)
         {
             return a + b + c + d;
+        }
+
+        /// <summary>
+        /// Appends a the provided text to a file.
+        /// </summary>
+        /// <param name="FilePath">The path of the file to write to.</param>
+        /// <param name="Text">The string to write.</param>
+        public static void WriteLineToFilePath(string FilePath, string Text)
+        {
+            using (StreamWriter outputFile = new StreamWriter(FilePath, true))
+            {
+                outputFile.WriteLine(Text);
+                outputFile.Close();
+            }
+        }
+
+        /// <summary>
+        /// Replaces the contents of a file.
+        /// </summary>
+        /// <param name="FilePath">The path of the file to write to.</param>
+        /// <param name="Text">The string to write.</param>
+        public static void WriteToFilePath(string FilePath, string Text)
+        {
+            using (StreamWriter outputFile = new StreamWriter(FilePath, true))
+            {
+                outputFile.Write(Text);
+                outputFile.Close();
+            }
         }
 
         public static string ConcatenateThree(string a, string b, string c)

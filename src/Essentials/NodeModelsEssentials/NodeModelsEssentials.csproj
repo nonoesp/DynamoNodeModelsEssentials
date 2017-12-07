@@ -151,10 +151,10 @@
     <Compile Include="Controls\StateDynamoControl.xaml.cs">
       <DependentUpon>StateDynamoControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EssentialsAstReusingFunctionCall.cs" />
     <Compile Include="EssentialsDataBridge.cs" />
-    <Compile Include="EssentialsDataBridgeSimple.cs" />
     <Compile Include="EssentialsEvents.cs" />
-    <Compile Include="EssentialsAstReuseFunctionCall.cs" />
+    <Compile Include="EssentialsAstNotReusingFunctionCall.cs" />
     <Compile Include="GeometryCustomPreview.cs" />
     <Compile Include="UIButton.cs" />
     <Compile Include="UISliderBound.cs" />
