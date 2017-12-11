@@ -8,16 +8,12 @@ using Newtonsoft.Json;
 
 namespace NodeModelsEssentials
 {
-    /*
-      * This example shows how to create a node model for Dynamo
-      * subclassing the NodeModel class.
-     */
-
     // <summary>
-    // Sample NodeModel node called Multiply.
-    /// github.com/teocomi: In order to execute AstFactory.BuildFunctionCall 
-    /// the methods have to be in a separate assembly and be loaded by Dynamo separately
-    /// File pkg.json defines which dll files are loaded
+    // This is a sample NodeModel subclass that returns
+    // a custom C# object (of the class MyMesh) that
+    // implements a custom way of rendering in the
+    // Tessellate method, as can be seen at
+    // https://github.com/nonoesp/DynamoNodeModelsEssentials/blob/master/src/Essentials/NodeModelsEssentialsFunctions/NodeModelsEssentialsFunctions.cs#L217-L282
     // </summary>
 
     // The NodeName attribute is what will display on 
