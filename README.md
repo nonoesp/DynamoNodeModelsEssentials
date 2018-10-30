@@ -35,7 +35,7 @@ This project provides a Visual Studio template for advanced Dynamo package devel
 
 These nodes document, in one way or another, my own learning on how to create nodes for Dynamo.
 
-The initial template and samples provided in this project were inspired by [DynamoDS/DynamoSamples](https://github.com/DynamoDS/DynamoSamples) and [teocomi/HellowDynamo](https://github.com/teocomi/HelloDynamo). I highly recommend you to take a look at these for further learning.
+The initial template and samples provided in this project were inspired by [DynamoDS/DynamoSamples](https://github.com/DynamoDS/DynamoSamples) and [teocomi/HelloDynamo](https://github.com/teocomi/HelloDynamo). I highly recommend you to take a look at these for further learning.
 
 [Jose Luis Garcia del Castillo](http://github.com/garciadelcastillo) wrote the Surface function samples.
 
@@ -48,4 +48,4 @@ DynamoNodeModelsEssentials is licensed under the MIT license. (http://opensource
 ## Me
 
 I'm [Nono Martínez Alonso](http://nono.ma) ([nono.ma](http://nono.ma)), a computational designer with a penchant for design, code, and simplicity.  
-I tweet at [@nonoesp](http://www.twitter.com/nonoesp), sketch at [@sketch.nono.ma](http://sketch.nono.ma), and write at [Getting Simple](http://gettingsimple.com/). If you use this, I would love to hear about it. Thanks!
+I host [The Getting Simple Podcast](https://gettingsimple.com/podcast), tweet at [@nonoesp](http://www.twitter.com/nonoesp), and sketch at [@sketch.nono.ma](http://sketch.nono.ma). If you use this, I would love to hear about it. Thanks!
