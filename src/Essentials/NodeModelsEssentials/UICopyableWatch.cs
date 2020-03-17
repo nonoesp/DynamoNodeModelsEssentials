@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using Dynamo.Controls;
-using Dynamo.Graph.Nodes;
-using Dynamo.Events;
-using Dynamo.Wpf;
-using ProtoCore.AST.AssociativeAST;
-using Autodesk.DesignScript.Runtime;
-using NodeModelsEssentials.Controls;
 using System.Linq;
-using VMDataBridge;
+using Autodesk.DesignScript.Geometry;
+using Autodesk.DesignScript.Runtime;
+using Dynamo.Controls;
+using Dynamo.Events;
+using Dynamo.Graph.Nodes;
+using Dynamo.Session;
+using Dynamo.Wpf;
 using Newtonsoft.Json;
+using NodeModelsEssentials.Controls;
+using ProtoCore.AST.AssociativeAST;
+using VMDataBridge;
 
 namespace NodeModelsEssentials
 {
@@ -30,8 +32,8 @@ namespace NodeModelsEssentials
     {
         #region private members
 
-        private string text;
-        private int index;
+        string text;
+        int index;
 
         #endregion
 
@@ -41,12 +43,12 @@ namespace NodeModelsEssentials
 
         public string Text
         {
-            get { return text; }
+            get => text;
             set
             {
                 text = value;
                 RaisePropertyChanged("Text");
-                this.OnNodeModified();
+                OnNodeModified();
             }
         }
 
@@ -55,15 +57,16 @@ namespace NodeModelsEssentials
         #region constructor
 
         [JsonConstructor]
-        private UICopyableWatch(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
+        UICopyableWatch(IEnumerable<PortModel> inPorts, IEnumerable<PortModel> outPorts) : base(inPorts, outPorts)
         {
         }
 
         public UICopyableWatch()
         {
-            Executed = new Action(() => {
+            Executed = () =>
+            {
                 //MessageBox.Show("Executed!");
-            });
+            };
 
             RegisterAllPorts();
 
@@ -72,29 +75,26 @@ namespace NodeModelsEssentials
             //DecreaseCommand = new DelegateCommand(DecreaseNumber);
             ExecutionEvents.GraphPostExecution += ExecutionEvents_GraphPostExecution;
             ExecutionEvents.GraphPreExecution += ExecutionEvents_GraphPreExecution;
-            
         }
 
-        private void ExecutionEvents_GraphPreExecution(Dynamo.Session.IExecutionSession session)
+        void ExecutionEvents_GraphPreExecution(IExecutionSession session)
         {
             //session.
-           
+
             if (InPorts[0].Connectors.Any())
             {
                 // this.GetValue()
                 // get parent
-               // MessageBox.Show("There is an input! " + InPorts[0].Owner.GetValue(;
+                // MessageBox.Show("There is an input! " + InPorts[0].Owner.GetValue(;
                 //return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()) };
             }
         }
 
-        private void ExecutionEvents_GraphPostExecution(Dynamo.Session.IExecutionSession session)
+        void ExecutionEvents_GraphPostExecution(IExecutionSession session)
         {
             //index++;
             //text += index.ToString();
         }
-
-
 
         #endregion
 
@@ -112,21 +112,15 @@ namespace NodeModelsEssentials
             DataBridge.Instance.RegisterCallback(GUID.ToString(), DataBridgeCallback);
         }
 
-        private void DataBridgeCallback(object data)
+        void DataBridgeCallback(object data)
         {
-            var str = data as string;
-            if(str != null)
-            {
+            string str = data as string;
+            if (str != null)
                 Text = str;
-            } else
-            {
+            else
                 Text = "";
-            }
-            if(data is Autodesk.DesignScript.Geometry.Point && (data as Autodesk.DesignScript.Geometry.Point) != null)
-            {
-                Text = (data as Autodesk.DesignScript.Geometry.Point).ToString();
-            }
-            this.Executed();
+            if (data is Point && data as Point != null) Text = (data as Point).ToString();
+            Executed();
         }
 
         [IsVisibleInDynamoLibrary(false)]
@@ -137,8 +131,8 @@ namespace NodeModelsEssentials
             //    return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), AstFactory.BuildNullNode()) };
             //}
 
-            var textNode = AstFactory.BuildStringNode(text);
-            
+            StringNode textNode = AstFactory.BuildStringNode(text);
+
             //var funcNode = AstFactory.BuildFunctionCall(
             //    new Func<List<object>, int, object>(NodeModelsEssentialsFunctions.SetTextValue),
             //    new List<AssociativeNode>() { inputAsNodes[0], textNode }
@@ -187,27 +181,25 @@ namespace NodeModelsEssentials
     }
 
     /// <summary>
-    /// View customizer for CustomUINodeModel Node Model.
+    ///     View customizer for CustomUINodeModel Node Model.
     /// </summary>
     public class CustomUINodeModelCopyableWatchViewCustomization : INodeViewCustomization<UICopyableWatch>
     {
         public void CustomizeView(UICopyableWatch model, NodeView nodeView)
         {
-            var copyableWatch = new CopyableWatch();
+            CopyableWatch copyableWatch = new CopyableWatch();
             nodeView.inputGrid.Children.Add(copyableWatch);
             nodeView.inputGrid.ClipToBounds = true;
-            
+
             //nodeView.MouseLeave += (sender, args) => { MessageBox.Show("MouseLeave"); };
 
             copyableWatch.DataContext = model;
             // add an event to watch properties of the workspace and set model.runtype
             //(nodeView.ViewModel.DynamoViewModel.Model.CurrentWorkspace as HomeWorkspaceModel).RunSettings.RunType
-
         }
 
-        public void Dispose() { }
+        public void Dispose()
+        {
+        }
     }
 }
-
-
-
