@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NodeModelsEssentials</RootNamespace>
     <AssemblyName>NodeModelsEssentials</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,49 +31,44 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CoreNodeModels, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.WpfUILibrary.2.0.0-beta2494\lib\net45\CoreNodeModels.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="CoreNodeModels">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\CoreNodeModels.dll</HintPath>
     </Reference>
-    <Reference Include="CoreNodeModelsWpf, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.WpfUILibrary.2.0.0-beta2494\lib\net45\CoreNodeModelsWpf.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="CoreNodeModelsWpf">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\CoreNodeModelsWpf.dll</HintPath>
     </Reference>
-    <Reference Include="DSIronPython, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.Core.2.0.0-beta2494\lib\net45\DSIronPython.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DSCoreNodes">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DSCoreNodes.dll</HintPath>
     </Reference>
-    <Reference Include="DynamoApplications, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.Core.2.0.0-beta2494\lib\net45\DynamoApplications.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DSIronPython">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DSIronPython.dll</HintPath>
     </Reference>
-    <Reference Include="DynamoCore, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.Core.2.0.0-beta2494\lib\net45\DynamoCore.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DynamoApplications">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DynamoApplications.dll</HintPath>
     </Reference>
-    <Reference Include="DynamoCoreWpf, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.WpfUILibrary.2.0.0-beta2494\lib\net45\DynamoCoreWpf.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DynamoCore">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DynamoCore.dll</HintPath>
     </Reference>
-    <Reference Include="DynamoInstallDetective, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.Core.2.0.0-beta2494\lib\net45\DynamoInstallDetective.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DynamoCoreWpf">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DynamoCoreWpf.dll</HintPath>
     </Reference>
-    <Reference Include="DynamoServices, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.DynamoServices.2.0.0-beta2494\lib\net45\DynamoServices.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DynamoInstallDetective">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DynamoInstallDetective.dll</HintPath>
     </Reference>
-    <Reference Include="DynamoShapeManager, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.Core.2.0.0-beta2494\lib\net45\DynamoShapeManager.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DynamoRevitDS">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DynamoRevitDS.dll</HintPath>
     </Reference>
-    <Reference Include="DynamoUnits, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.0.0-beta2494\lib\net45\DynamoUnits.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DynamoServices">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DynamoServices.dll</HintPath>
     </Reference>
-    <Reference Include="DynamoUtilities, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.Core.2.0.0-beta2494\lib\net45\DynamoUtilities.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="DynamoShapeManager">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DynamoShapeManager.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamoUnits">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DynamoUnits.dll</HintPath>
+    </Reference>
+    <Reference Include="DynamoUtilities">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\DynamoUtilities.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Prism.Composition, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Composition.5.0.0\lib\NET45\Microsoft.Practices.Prism.Composition.dll</HintPath>
@@ -103,7 +99,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
@@ -112,13 +108,23 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="ProtoCore, Version=2.0.0.2494, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.Core.2.0.0-beta2494\lib\net45\ProtoCore.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="ProtoCore">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\ProtoCore.dll</HintPath>
     </Reference>
-    <Reference Include="ProtoGeometry, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamoVisualProgramming.ZeroTouchLibrary.2.0.0-beta2494\lib\net45\ProtoGeometry.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="ProtoGeometry">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\ProtoGeometry.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\RevitAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\RevitAPIUI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitNodes">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\RevitNodes.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitServices">
+      <HintPath>..\..\..\..\Dynamo-SDK-Revit\Revit 2020-Dynamo 2.1\RevitServices.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
