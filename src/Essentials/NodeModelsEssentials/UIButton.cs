@@ -10,7 +10,9 @@ using Dynamo.Wpf;
 using NodeModelsEssentials.Functions;
 using NodeModelsEssentials.Controls;
 using Dynamo.UI.Commands;
+using Microsoft.Practices.Prism.Commands;
 using Newtonsoft.Json;
+using DelegateCommand = Dynamo.UI.Commands.DelegateCommand;
 
 namespace NodeModelsEssentials
 {
